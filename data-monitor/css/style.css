@@ -1,0 +1,47 @@
+body {
+    margin: 10px;
+}
+
+table {
+    white-space: nowrap;
+}
+
+.menu-table th,td {
+    border-collapse: separate;
+    padding:0 50px 0 0;
+}
+
+#timezone{
+    position:absolute;
+    margin: 10px;
+    top:0;
+    right:0;
+}
+
+.data-table {
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.sortable tr th {
+    cursor: pointer;
+}
+
+.ahead {
+    background-color: steelblue;
+}
+
+.lagging {
+    background-color: red;
+}
+
+.diff {
+    text-align: right;
+}
+
+.status-div {
+    width: 10px;
+    height: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}

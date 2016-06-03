@@ -1,0 +1,5 @@
+AuthType Digest
+AuthName data-monitor
+AuthUserFile "htpasswd_examples/axibase_htpasswd"
+Require valid-user
+

@@ -1,0 +1,27 @@
+{
+  "name": "axibase/atsd-api-php",
+  "description": "Axibase Time-Series Database Client for PHP",
+  "keywords": ["axibase", "atsd", "api"],
+  "homepage": "http://axibase.com",
+  "type": "library",
+  "license": "Apache-2.0",
+  "require": {
+    "ext-curl": "*",
+    "php": ">5.3.2"
+  },
+  "autoload": {
+    "files": [
+        "src/atsdPHP/AtsdClient.php",        
+        "src/atsdPHP/Constants.php",        
+        "src/atsdPHP/HttpClient.php",        
+        "src/atsdPHP/Utils.php",
+        "src/atsdPHP/models/AlertsHistory.php",
+        "src/atsdPHP/models/Alerts.php",
+        "src/atsdPHP/models/Entities.php",
+        "src/atsdPHP/models/EntityGroups.php",
+        "src/atsdPHP/models/Metrics.php",
+        "src/atsdPHP/models/Properties.php",
+        "src/atsdPHP/models/Series.php"
+    ]
+  }
+}

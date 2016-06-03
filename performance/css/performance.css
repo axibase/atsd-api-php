@@ -1,0 +1,56 @@
+.widget,.widget-title{
+    margin: 10px;
+}
+
+.panel {
+    margin: 10px;
+    width: 920px;
+}
+
+#tabs {
+    margin: 10px;
+}
+
+.head {
+    margin-bottom: 10px;
+}
+.title {
+    text-align: left;
+    vertical-align: top;
+    font-size: 20px;
+    float:left;
+}
+
+#close {
+    position: absolute;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.menuBlocks {
+    padding-top: 10px;
+    padding-right: 20px
+}
+
+table td {
+    vertical-align: top;
+}
+
+body {
+    overflow: auto;
+    white-space: nowrap;
+    font-family: Arial;
+    margin: 10px;
+}
+
+#user b, .panel-heading {
+    cursor: pointer;
+}
+
+.axi-tooltip-container {
+    z-index: -1
+}
+
+.axi-table-container{
+    height: 100% !important;
+}

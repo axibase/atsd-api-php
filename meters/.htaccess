@@ -1,0 +1,4 @@
+AuthType Digest
+AuthName meters
+AuthUserFile "htpasswd_examples/axibase_htpasswd"
+Require valid-user

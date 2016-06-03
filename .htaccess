@@ -1,0 +1,10 @@
+<Files ~ ".*\.ini$">
+    Require all denied
+</Files>
+
+<Files ~ "axibase_htpasswd">
+    Require all denied
+</Files>
+
+
+

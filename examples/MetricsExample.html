@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css"></style></head>
+<body>
+<h2>Metrics for expression: name like 'nmon*'; limit: 10</h2>
+        <table id="metrics">
+        <thead>
+        <tr><th>Index</th><th>name</th><th>enabled</th><th>dataType</th><th>counter</th><th>persistent</th><th>timePrecision</th><th>retentionInterval</th><th>invalidAction</th><th>lastInsertTime</th></tr>
+        </thead>
+        <tbody><tr><td>0</td><td>nmon.asynchronous_i/o.aiocpu</td><td>1</td><td>FLOAT</td><td></td><td>1</td><td>MILLISECONDS</td><td>0</td><td>NONE</td><td>2015-03-11 14:57:36</td></tr><tr><td>1</td><td>nmon.asynchronous_i/o.aioprocs</td><td>1</td><td>FLOAT</td><td></td><td>1</td><td>MILLISECONDS</td><td>0</td><td>NONE</td><td>2015-03-11 14:57:36</td></tr><tr><td>2</td><td>nmon.asynchronous_i/o.aiorunning</td><td>1</td><td>FLOAT</td><td></td><td>1</td><td>MILLISECONDS</td><td>0</td><td>NONE</td><td>2015-03-11 14:57:36</td></tr><tr><td>3</td><td>nmon.controller_%busy</td><td>1</td><td>FLOAT</td><td></td><td>1</td><td>MILLISECONDS</td><td>0</td><td>NONE</td><td>2015-03-11 06:42:00</td></tr><tr><td>4</td><td>nmon.controller_block_size_kb</td><td>1</td><td>FLOAT</td><td></td><td>1</td><td>MILLISECONDS</td><td>0</td><td>NONE</td><td>2015-03-11 06:42:00</td></tr><tr><td>5</td><td>nmon.controller_read_kb/s</td><td>1</td><td>FLOAT</td><td></td><td>1</td><td>MILLISECONDS</td><td>0</td><td>NONE</td><td>2015-03-11 06:42:00</td></tr><tr><td>6</td><td>nmon.controller_svc_time_ms</td><td>1</td><td>FLOAT</td><td></td><td>1</td><td>MILLISECONDS</td><td>0</td><td>NONE</td><td>2015-03-11 06:42:00</td></tr><tr><td>7</td><td>nmon.controller_transfers_per_second</td><td>1</td><td>FLOAT</td><td></td><td>1</td><td>MILLISECONDS</td><td>0</td><td>NONE</td><td>2015-03-11 06:42:00</td></tr><tr><td>8</td><td>nmon.controller_wait_time_ms</td><td>1</td><td>FLOAT</td><td></td><td>1</td><td>MILLISECONDS</td><td>0</td><td>NONE</td><td>2015-03-11 06:42:00</td></tr><tr><td>9</td><td>nmon.controller_write_kb/s</td><td>1</td><td>FLOAT</td><td></td><td>1</td><td>MILLISECONDS</td><td>0</td><td>NONE</td><td>2015-03-11 06:42:00</td></tr></tbody>
+        </table><h2>Metric:disk_used_percent, entity: nurswgvml006</h2>
+        <table id="metric">
+        <thead>
+        <tr><th>Index</th><th>name</th><th>enabled</th><th>dataType</th><th>counter</th><th>label</th><th>persistent</th><th>tags.table</th><th>timePrecision</th><th>retentionInterval</th><th>minValue</th><th>maxValue</th><th>invalidAction</th><th>lastInsertTime</th><th>filter</th></tr>
+        </thead>
+        <tbody><tr><td>0</td><td>disk_used_percent</td><td>1</td><td>FLOAT</td><td></td><td>Disk Used, %</td><td>1</td><td>Disk (script)</td><td>MILLISECONDS</td><td>0</td><td>0</td><td>100</td><td>TRANSFORM</td><td>2015-03-11 13:58:16</td><td>!likeAny(tags.mount_point, collection('ignore-collector-mount-points'))</td></tr></tbody>
+        </table><h2>Entity and Tags for metric: disk_used_percent</h2>
+        <table id="entAndTags">
+        <thead>
+        <tr><th>Index</th><th>entity</th><th>tags.file_system</th><th>tags.mount_point</th><th>lastInsertTime</th></tr>
+        </thead>
+        <tbody><tr><td>0</td><td>nurswgvml006</td><td>/dev/mapper/vg_nurswgvml006-lv_root</td><td>/</td><td>1426071476000</td></tr><tr><td>1</td><td>nurswgvml006</td><td>/dev/sdb1</td><td>/media/datadrive</td><td>1426071476000</td></tr></tbody>
+        </table>
+
+</body></html>
