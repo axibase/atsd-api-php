@@ -1,6 +1,7 @@
 confWidgetConfig = {
     initSize: {width: 900, height: 200},
     url: "",
+    contextpath: "/performance/",
     path: 'ApiProxy.php?type=properties',
     type: 'property',
     timespan: '10 year',
