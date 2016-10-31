@@ -1,12 +1,12 @@
 # Axibase Time-Series Database Client for PHP
 
-The **ATSD Client for PHP** enables PHP developers to easily read statistics and metadata from the 
+The **ATSD Client for PHP** enables PHP developers to easily read statistics and metadata from the
 [Axibase Time-Series Database][atsd]. With minimal effort, you can build reporting, analytics, and alerting solutions. Use [Composer][axibase_atsd-api-php] to get started with this PHP API.
 
 * [Documentation][atsd-api]
 * [Issues][atsd-issues]
 
-## Implemented Methods
+## Implemented Methods i
 
 **The ATSD Client for PHP** in an easy-to-use client for interfacing with **ATSD** metadata and data REST API services. It has the ability to read time-series values, statistics, properties, alerts, and messages.
 
@@ -65,7 +65,7 @@ Once in ```composer.json```, specify the following:
 Specify the correct credentials in atsd.ini (```atsd-api-php/atsdPHP/atsd.ini```):
 
 ```shell
-url = [[atsd_server]] 
+url = [[atsd_server]]
 username = [[username]]
 password = [[password]]
 ```
@@ -98,7 +98,7 @@ Make sure that application response is "Connection success.".
 $client = new HttpClient();
 $client->connect();
 
-$expression = 'name like \'nurs*\''; 
+$expression = 'name like \'nurs*\'';
 $tags = 'app, os';
 $limit = 10;
 
@@ -198,7 +198,7 @@ If you get an error like the following, ensure that the variable date.timezone i
 Fatal error: Uncaught exception 'Exception' with message 'DateTime::__construct():
 It is not safe to rely on the system's timezone settings. You are required to use the date.timezone setting or the date_default_timezone_set() function.
 In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier.
-We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone.' 
+We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone.'
 ```
 
 [atsd]:https://axibase.com/products/axibase-time-series-database/
