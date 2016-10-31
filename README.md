@@ -1,14 +1,14 @@
 # Axibase Time-Series Database Client for PHP
 
 The **ATSD Client for PHP** enables PHP developers to easily read statistics and metadata from the
-[Axibase Time-Series Database][atsd]. With minimal effort, you can build reporting, analytics, and alerting solutions. Use [Composer][axibase_atsd-api-php] to get started with this PHP API.
+[Axibase Time Series Database][atsd]. With minimal effort, you can build reporting, analytics, and alerting solutions. Use [Composer][axibase_atsd-api-php] to get started with this PHP API.
 
 * [Documentation][atsd-api]
 * [Issues][atsd-issues]
 
 ## Implemented Methods i
 
-**The ATSD Client for PHP** in an easy-to-use client for interfacing with **ATSD** metadata and data REST API services. It has the ability to read time-series values, statistics, properties, alerts, and messages.
+**The ATSD Client for PHP** is an easy-to-use client for interfacing with **ATSD** metadata and data **REST API** services. It has the ability to read time-series values, statistics, properties, alerts, and messages.
 
 - Data API
     - Series
@@ -34,7 +34,7 @@ The **ATSD Client for PHP** enables PHP developers to easily read statistics and
 
 
 ## Getting Started
-Before you begin using ATSD Client for PHP, you need to install a copy of the [Axibase Time-Series Database][atsd]. Download the latest version of ATSD that is available for your Linux distribution.
+Before you begin using ATSD Client for PHP, you need to install a copy of the [Axibase Time Series Database][atsd]. Download the latest version of ATSD that is available for your Linux distribution.
 
 Minimum requirements for running the ATSD Client: PHP 5.3.2+, php5-curl
 
@@ -47,7 +47,7 @@ mv atsd-api-php /{your_documentroot_folder}/
 ```
 - Composer
 
-Once in ```composer.json```, specify the following:
+Once in `composer.json`, specify the following:
 ```javascript
 {
 "require": {
@@ -62,7 +62,7 @@ Once in ```composer.json```, specify the following:
 
 ## Configure Credentials
 
-Specify the correct credentials in atsd.ini (```atsd-api-php/atsdPHP/atsd.ini```):
+Specify the correct credentials in atsd.ini (`atsd-api-php/atsdPHP/atsd.ini`):
 
 ```shell
 url = [[atsd_server]]
@@ -71,9 +71,9 @@ password = [[password]]
 ```
 
 ## Check connection
-Navigate to the following URL: ```yourDomainName/atsd-api-php/examples/testConnection.php```.
+Navigate to the following URL: `yourDomainName/atsd-api-php/examples/testConnection.php`.
 
-Make sure that application response is "Connection success.".
+Make sure that the application response is "Connection success.".
 
 ## Examples
 
@@ -151,7 +151,7 @@ $client->close();
 ```
 
 ### Custom Query
-You are able to customize your series query to use <a target="_blank" href="http://axibase.com/atsd/api/#aggregated-example">aggregate functionality</a> using the following syntax:
+You are able to customize your series query to use <a target="_blank" href="http://axibase.com/atsd/api/#aggregated-example">aggregate functionality</a> with the following syntax:
 ```php
 $queryClient->addQuery("Entity1", "Metric1", array(
     "startDate" => "2015-02-05T09:53:00Z",
@@ -193,7 +193,7 @@ $queryClient->addQuery("Entity1", "Metric1", array(
 ```
 ### Troubleshooting
 
-If you get an error like the following, ensure that the variable date.timezone in your php.ini is set.
+If you get an error like the following, ensure that `variable date.timezone` in your php.ini is set.
 ```
 Fatal error: Uncaught exception 'Exception' with message 'DateTime::__construct():
 It is not safe to rely on the system's timezone settings. You are required to use the date.timezone setting or the date_default_timezone_set() function.
