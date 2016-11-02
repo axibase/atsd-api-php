@@ -1,4 +1,4 @@
-# Axibase Time-Series Database Client for PHP
+# Axibase Time Series Database Client for PHP
 
 The **ATSD Client for PHP** enables PHP developers to easily read statistics and metadata from the
 [Axibase Time Series Database][atsd]. With minimal effort, you can build reporting, analytics, and alerting solutions. Use [Composer][axibase_atsd-api-php] to get started with this PHP API.
