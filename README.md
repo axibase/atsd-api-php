@@ -1,99 +1,134 @@
-# Axibase Time Series Database Client for PHP
+# ATSD PHP Client
 
-The **ATSD Client for PHP** enables PHP developers to easily read statistics and metadata from the
-[Axibase Time Series Database][atsd]. With minimal effort, you can build reporting, analytics, and alerting solutions. Use [Composer][axibase_atsd-api-php] to get started with this PHP API.
+![](./images/axibase-and-php.png)
 
-* [Documentation][atsd-api]
-* [Issues][atsd-issues]
+## Overview
 
-## Implemented Methods i
+**ATSD PHP Client** enables PHP developers to read statistics and metadata from [Axibase Time Series Database](https://axibase.com/docs/atsd/) as well as build reporting, analytics, and alerting solutions. Get started by downloading [Composer](https://packagist.org/packages/axibase/atsd-api-php) to install project dependencies. PHP Client supports various request methods, enumerated below, for interfacing with the database.
 
-**The ATSD Client for PHP** is an easy-to-use client for interfacing with **ATSD** metadata and data **REST API** services. It has the ability to read time-series values, statistics, properties, alerts, and messages.
+## Request Methods
 
-- Data API
-    - Series
-        - QUERY
-    - Properties
-        - QUERY
-    - Alerts
-        - QUERY
-    - Alerts History
-        - QUERY
+### [REST API](https://axibase.com/docs/atsd/api/data/)
 
-- Meta API
-    - Metrics
-        - Get Metrics
-        - Get Metric
-        - Get Entities and Series Tags for Metric
-    - Entities
-        - Get Entities
-        - Get Metrics for Entity
-    - Entity Groups
-        - Get Entity Groups
-        - Entities for Entity Group
+Accessing the REST API via PHP client allow you to retrieve data from the database using HTTP requests.
 
+#### Series
 
-## Getting Started
-Before you begin using ATSD Client for PHP, you need to install a copy of the [Axibase Time Series Database][atsd]. Download the latest version of ATSD that is available for your Linux distribution.
+* [Series: `query`](https://axibase.com/docs/atsd/api/data/series/query.html)<br>
+  Retrieves time series objects for the specified metric, entity, tags, and date range. Applies common time series transformations including aggregation, interpolation, downsampling etc.
 
-Minimum requirements for running the ATSD Client: PHP 5.3.2+, php5-curl
+#### Properties
 
-## Installing the ATSD Client
+* [Properties: `query`](https://axibase.com/docs/atsd/api/data/properties/query.html)<br>
+  Retrieves property records for the specified filters including type, entity, key, and time range.
+
+#### Alerts
+
+* [Alerts: `query`](https://axibase.com/docs/atsd/api/data/alerts/query.html)<br>
+  Retrieves **open** alerts for specified filters.
+
+* [Alerts: `history query`](https://axibase.com/docs/atsd/api/data/alerts/history-query.html)<br>
+  Retrieves a list of **closed** alerts matching specified fields.
+
+### [Meta API](https://axibase.com/docs/atsd/api/meta/)
+
+The Meta API allows you to query metadata for metrics, entities, and entity groups in the database.
+
+#### Metrics
+
+* [Metric: `get`](https://axibase.com/docs/atsd/api/meta/metric/get.html)<br>
+  Retrieves properties and tags for the specified metric.
+
+#### Entities
+
+* [Entity: `get`](https://axibase.com/docs/atsd/api/meta/entity/get.html)<br>
+  Retrieves fields and tags describing the specified entity.
+
+* [Entity: `metrics`](https://axibase.com/docs/atsd/api/meta/entity/metrics.html)<br>
+  Retrieves a list of metrics collected by the entity.
+
+#### Entity Groups
+
+* [Entity Group: `get`](https://axibase.com/docs/atsd/api/meta/entity-group/get.html)<br>
+  Retrieves information about the specified entity group including its name and user-defined tags.
+
+* [Entity Group: `get entities`](https://axibase.com/docs/atsd/api/meta/entity-group/get-entities.html)<br>
+  Retrieves a list of entities that are members of the specified entity group and are matching the specified filter conditions.
+
+---
+
+## Installing ATSD PHP Client
+
+**Prerequisites**:
+
+* [Install ATSD](https://axibase.com/docs/atsd/installation/).
+* PHP `5.3.2+` and `php5-curl`.
+
 ### Linux
-- From source:
-```shell
-git clone https://github.com/axibase/atsd-api-php.git
-mv atsd-api-php /{your_documentroot_folder}/
-```
-- Composer
 
-Once in `composer.json`, specify the following:
-```javascript
-{
-"require": {
-    "axibase/atsd-api-php": "dev-master"
-    }
-}
-```
+* Open command prompt, clone the `atsd-api-php` repository to the local file system and move it to `root` directory:
+
+   ```sh
+   git clone https://github.com/axibase/atsd-api-php.git
+   mv atsd-api-php /root
+   ```
+
+* Download and install project dependencies via [`composer.json`](https://packagist.org/packages/axibase/atsd-api-php) file.
+
+  Open Composer file:
+
+  ```sh
+  cd ./path/to/composer/
+  xdg-open composer.json
+  ````
+
+  Append the following parameter `composer.json`:
+
+  ```json
+  {
+  "require": {
+      "axibase/atsd-api-php": "dev-master"
+      }
+  }
+  ```
 
 ### Windows
-- [Windows installation][windows-install]
 
+* Follow the [Windows Installation Guide](./ATSD-php-client_Windows.md)
 
-## Configure Credentials
+### Configure Credentials
 
-Specify the correct credentials in atsd.ini (`atsd-api-php/atsdPHP/atsd.ini`):
+Specify credentials in [`atsd.ini`](atsd-api-php/atsdPHP/atsd.ini):
 
-```shell
+```sh
 url = [[atsd_server]]
 username = [[username]]
 password = [[password]]
 ```
 
-## Check connection
-Navigate to the following URL: `yourDomainName/atsd-api-php/examples/testConnection.php`.
+### Check connection
 
-Make sure that the application response is "Connection success.".
+Navigate to the following URL:
+
+`localhost/atsd-api-php/examples/testConnection.php`.
+
+The target application response is **Connection success.**
+
+---
 
 ## Examples
 
-[AtsdClientBasicExample][atsd-basic-example]
-
-[AtsdClientAlertsExample][atsd-alerts-example]
-
-[AtsdClientAlertsHistoryExample][atsd-alertsHistory-example]
-
-[AtsdClientEntitiesExample][atsd-entities-example]
-
-[AtsdClientEntityGroupsExample][atsd-entityGroup-example]
-
-[AtsdClientMetricsExample][atsd-metrics-example]
-
-[AtsdClientPropertiesExample][atsd-properties-example]
-
-[AtsdClientSeriesExample][atsd-series-example]
+* [`AtsdClientBasicExample`](./examples/BasicExample.html)
+* [`AtsdClientAlertsExample`](./examples/AlertsExample.html)
+* [`AtsdClientAlertsHistoryExample`](./examples/AlertsHistoryExample.html)
+* [`AtsdClientEntitiesExample`](./examples/EntitiesExample.html)
+* [`AtsdClientEntityGroupsExample`](./examples/EntityGroupsExample.html)
+* [`AtsdClientMetricsExample`](./examples/MetricsExample.html)
+* [`AtsdClientPropertiesExample`](./examples/PropertiesExample.html)
+* [`AtsdClientSeriesExample`](./examples/SeriesExample.html)
 
 ### Metadata Query
+
 ```php
 $client = new HttpClient();
 $client->connect();
@@ -151,7 +186,9 @@ $client->close();
 ```
 
 ### Custom Query
-You are able to customize your series query to use <a target="_blank" href="http://axibase.com/atsd/api/#aggregated-example">aggregate functionality</a> with the following syntax:
+
+Series queries support [aggregation functions](https://axibase.com/docs/atsd/api/data/series/aggregate.html#aggregate-processor) such as [interpolation](https://axibase.com/docs/atsd/api/data/series/aggregate.html#interpolation):
+
 ```php
 $queryClient->addQuery("Entity1", "Metric1", array(
     "startDate" => "2015-02-05T09:53:00Z",
@@ -191,27 +228,14 @@ $queryClient->addQuery("Entity1", "Metric1", array(
     )
 ));
 ```
+
 ### Troubleshooting
 
-If you get an error like the following, ensure that `variable date.timezone` in your php.ini is set.
-```
+```txt
 Fatal error: Uncaught exception 'Exception' with message 'DateTime::__construct():
 It is not safe to rely on the system's timezone settings. You are required to use the date.timezone setting or the date_default_timezone_set() function.
 In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier.
 We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone.'
 ```
 
-[atsd]:https://axibase.com/products/axibase-time-series-database/
-[atsd-api]:https://axibase.com/products/axibase-time-series-database/reading-data/php/
-[atsd-issues]:https://www.axibase.com/support.htm
-[windows-install]:https://github.com/axibase/atsd-api-php/blob/master/ATSD-php-client_Windows.md
-
-[atsd-alerts-example]:http://htmlpreview.github.io/?https://github.com/axibase/atsd-api-php/blob/master/examples/AlertsExample.html
-[atsd-alertsHistory-example]:http://htmlpreview.github.io/?https://github.com/axibase/atsd-api-php/blob/master/examples/AlertsHistoryExample.html
-[atsd-entities-example]:http://htmlpreview.github.io/?https://github.com/axibase/atsd-api-php/blob/master/examples/EntitiesExample.html
-[atsd-entityGroup-example]:http://htmlpreview.github.io/?https://github.com/axibase/atsd-api-php/blob/master/examples/EntityGroupsExample.html
-[atsd-metrics-example]:http://htmlpreview.github.io/?https://github.com/axibase/atsd-api-php/blob/master/examples/MetricsExample.html
-[atsd-properties-example]:http://htmlpreview.github.io/?https://github.com/axibase/atsd-api-php/blob/master/examples/PropertiesExample.html
-[atsd-series-example]:http://htmlpreview.github.io/?https://github.com/axibase/atsd-api-php/blob/master/examples/SeriesExample.html
-[atsd-basic-example]:https://github.com/axibase/atsd-api-php/blob/master/examples/BasicExample.html
-[axibase_atsd-api-php]:https://packagist.org/packages/axibase/atsd-api-php
+Upon reception of the above error message, ensure that `variable date.timezone` in `php.ini` is correctly configured.
