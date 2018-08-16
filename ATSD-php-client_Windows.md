@@ -1,51 +1,55 @@
-# atsd-php-client on Windows
+# `atsd-php-client` for Windows
 
-## Install and Configure php
+## Install and Configure PHP
 
-- Download PHP from http://windows.php.net/download.
+* [Download PHP](http://windows.php.net/download).
+  * For assistance installing PHP follow the [Manuel Installation Instructions](http://php.net/manual/en/install.windows.manual.php).
+* Specify path to the `php_curl` extension in `php.ini`:
 
-- Follow the installation steps at http://php.net/manual/en/install.windows.manual.php.
-
-* Ensure that you specify the path to the `php_curl` extension in php.ini:
-
-```
+```php
 extension=ext\php_curl.dll
 ```
 
-* Ensure that you specify a timezone in php.ini:
+* Specify a timezone in `php.ini`:
 
-```
-; Defines the default timezone used by the date functions
-; http://php.net/date.timezone
+```php
+# Defines the default timezone used by the date functions
+# http://php.net/date.timezone
 date.timezone = UTC
 ```
 
-## Install atst-php-client
+## Install `atsd-php-client`
 
-- Download the ATSD-php-client to `c:\projects\atsd-api-php`.
+* Download the `atsd-php-client` to `c:\projects\atsd-api-php`.
+  * Use `git` to clone the GitHub repository to the local filesystem.
 
-* If you have git installed, you can just clone the github repository
+   ```sh
+   git clone https://github.com/axibase/atsd-api-php.git    c:\\projects\\atsd-api-php
+   ```
 
-```
-git clone https://github.com/axibase/atsd-api-php.git c:\\projects\\atsd-api-php
-```
-
--   If you don't have git installed, download the ZIP from https://github.com/axibase/atsd-api-php and extract it to `c:\projects\atsd-api-php`.
+  * Alternatively, download the [`.zip`](https://github.com/axibase/atsd-api-php) file from GitHub and extract it to `c:\projects\atsd-api-php`.
 
 ## Run Examples
 
-- Specify your credentials and ATSD url in `c:\projects\atsd-api-php\examples\atsd.ini`.
+* Specify credentials and ATSD URL in [`atsd.ini`](./atsdPHP/atsd.ini).
 
-- Run the built-in web server:
-
+```sh
+cd c:\projects\atsd-api-php\examples
+atsd.ini
 ```
+
+* Run the built-in web server:
+
+```sh
 cd c:\projects\atsd-api-php\examples
 php -S localhost:8000
 ```
 
-- Use your browser to view example files at `http://localhost:8000/{.php fileName}`. For example:
+* Use your browser to view example files at `http://localhost:8000/{example}`.
 
-~~~
+For example:
+
+```txt
 http://localhost:8000/BasicExample.php
 http://localhost:8000/SeriesExample.php
-~~~
+```
