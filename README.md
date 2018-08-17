@@ -2,6 +2,14 @@
 
 ![](./images/axibase-and-php.png)
 
+## Table of Contents
+
+* [Overview](#overview)
+* [Request Methods](#request-methods)
+* [Installing PHP Client](#installing-atsd-php-client)
+* [Examples](#examples)
+* [Troubleshooting](#troubleshooting)
+
 ## Overview
 
 **ATSD PHP Client** enables PHP developers to read statistics and metadata from [Axibase Time Series Database](https://axibase.com/docs/atsd/) as well as build reporting, analytics, and alerting solutions. Get started by downloading [Composer](https://packagist.org/packages/axibase/atsd-api-php) to install project dependencies. PHP Client supports various request methods, enumerated below, for interfacing with the database.
@@ -101,9 +109,9 @@ The Meta API allows you to query metadata for metrics, entities, and entity grou
 Specify credentials in [`atsd.ini`](atsd-api-php/atsdPHP/atsd.ini):
 
 ```sh
-url = [[atsd_server]]
-username = [[username]]
-password = [[password]]
+url = <atsd-server>
+username = <username>
+password = <password>
 ```
 
 ### Check connection
